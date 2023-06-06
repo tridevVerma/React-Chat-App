@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Container, Main, Sidebar } from "./components";
 
 function App() {
   useEffect(() => {
@@ -32,9 +33,14 @@ function App() {
     // getUsers();
   }, []);
   return (
-    <Router>
-      <Routes></Routes>
-    </Router>
+    <Container>
+      <Sidebar />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Main />} />
+        </Routes>
+      </Router>
+    </Container>
   );
 }
 
