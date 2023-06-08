@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { StyledSidebar } from "../styles";
+import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
+  const [recentContacts, setRecentContacts] = useState([]);
+
+  useEffect(() => {
+    async function getRecentContacts() {
+      try {
+        const response = await axios.get(
+          "https://my-json-server.typicode.com/tridevVerma/React-Chat-App/users"
+        );
+        setRecentContacts(response.data);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    getRecentContacts();
+  }, []);
+
   return (
     <StyledSidebar>
       <div className="user-info">
@@ -30,37 +49,28 @@ const Sidebar = () => {
 
       <div className="recent-chats">
         <ul>
-          <li>
-            <div className="profile-image">
-              <img src="https://robohash.org/impeditautest.png" alt="" />
-            </div>
-            <div className="content">
-              <h4>Tridev Verma</h4>
-              <small>Hey!! whats going on ?</small>
-            </div>
+          {recentContacts.map((contact) => {
+            return (
+              <li key={contact.id}>
+                <NavLink to={`/conversation/${contact.id}`}>
+                  <div className="profile-image">
+                    <img src={contact.image} alt={contact.firstname} />
+                  </div>
+                  <div className="content">
+                    <h4>
+                      {contact.firstname} {contact.lastname}
+                    </h4>
+                    <small>Hey!! whats going on ?</small>
+                  </div>
 
-            <div className="status">
-              <small>10:12</small>
-              <span className="active"></span>
-            </div>
-          </li>
-          <li>
-            <div className="profile-image">
-              <img src="https://robohash.org/cupiditatererumquos.png" alt="" />
-            </div>
-            <div className="content">
-              <h4>Saurav Verma</h4>
-              <small>
-                Hii Everyone !! sdkfjsldkfj lksdjflkjsdlkfs sdflkjsdlkfjsdkfdsf
-                sdf sd f
-              </small>
-            </div>
-
-            <div className="status">
-              <small>10:40</small>
-              <span className=""></span>
-            </div>
-          </li>
+                  <div className="status">
+                    <small>10:12</small>
+                    <span className={contact.active ? "active" : ""}></span>
+                  </div>
+                </NavLink>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </StyledSidebar>

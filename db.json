@@ -8,7 +8,40 @@
       "phone": "+63 791 675 8914",
       "gender": "male",
       "city": "Washington",
-      "about": "Help Desk Operator"
+      "about": "Help Desk Operator",
+      "active": false,
+      "conversation": [
+        {
+          "user": 0,
+          "content": "Hi Terry",
+          "time": "8:52"
+        },
+        {
+          "user": 1,
+          "content": "Tridev, Good to meet you!",
+          "time": "8:54"
+        },
+        {
+          "user": 0,
+          "content": "Did you just arrive here?",
+          "time": "8:55"
+        },
+        {
+          "user": 1,
+          "content": "Yeah, We arrived last week.",
+          "time": "8:56"
+        },
+        {
+          "user": 0,
+          "content": "It's exciting! It's much busier than the last city we lived in. I was working in Seattle for the last 3 years.",
+          "time": "8:57"
+        },
+        {
+          "user": 1,
+          "content": "It really is very busy. I moved here from Tokyo 5 years ago and I still have trouble sometimes.",
+          "time": "8:58"
+        }
+      ]
     },
     {
       "id": 2,
@@ -18,7 +51,8 @@
       "phone": "+7 813 117 7139",
       "gender": "male",
       "city": "Louisville",
-      "about": "Senior Cost Accountant"
+      "about": "Senior Cost Accountant",
+      "active": false
     },
     {
       "id": 3,
@@ -28,7 +62,30 @@
       "phone": "+63 739 292 7942",
       "gender": "male",
       "city": "Grass Valley",
-      "about": "Mechanical Systems Engineer"
+      "about": "Mechanical Systems Engineer",
+      "active": true,
+      "conversation": [
+        {
+          "user": 1,
+          "content": "Hii Saurav, it's Terrill. How are you?",
+          "time": "7:26"
+        },
+        {
+          "user": 0,
+          "content": "Oh, hi, John! I was just thinking about you.",
+          "time": "7:26"
+        },
+        {
+          "user": 1,
+          "content": "That's nice. I was wondering if you'd like to go to a movie tonight.",
+          "time": "7:28"
+        },
+        {
+          "user": 0,
+          "content": "Sure, I'd love to! What's playing?",
+          "time": "7:29"
+        }
+      ]
     },
     {
       "id": 4,
@@ -38,7 +95,8 @@
       "phone": "+86 461 145 4186",
       "gender": "male",
       "city": "Manchester",
-      "about": "Paralegal"
+      "about": "Paralegal",
+      "active": false
     },
     {
       "id": 5,
@@ -48,7 +106,8 @@
       "phone": "+372 285 771 1911",
       "gender": "male",
       "city": "Louisville",
-      "about": "Web Developer I"
+      "about": "Web Developer I",
+      "active": true
     },
     {
       "id": 6,
@@ -58,7 +117,8 @@
       "phone": "+351 527 735 3642",
       "gender": "female",
       "city": "Essex",
-      "about": "Civil Engineer"
+      "about": "Civil Engineer",
+      "active": false
     },
     {
       "id": 7,
@@ -68,7 +128,8 @@
       "phone": "+62 640 802 7111",
       "gender": "female",
       "city": "Vallejo",
-      "about": "Sales Associate"
+      "about": "Sales Associate",
+      "active": true
     },
     {
       "id": 8,
@@ -78,7 +139,8 @@
       "phone": "+86 946 297 2275",
       "gender": "male",
       "city": "Glendale",
-      "about": "Clinical Specialist"
+      "about": "Clinical Specialist",
+      "active": true
     },
     {
       "id": 9,
@@ -88,7 +150,8 @@
       "phone": "+86 356 590 9727",
       "gender": "male",
       "city": "Nashville",
-      "about": "Community Outreach Specialist"
+      "about": "Community Outreach Specialist",
+      "active": false
     },
     {
       "id": 10,
@@ -98,7 +161,8 @@
       "phone": "+60 184 408 0824",
       "gender": "female",
       "city": "Glendale",
-      "about": "Senior Sales Associate"
+      "about": "Senior Sales Associate",
+      "active": true
     }
   ]
 }

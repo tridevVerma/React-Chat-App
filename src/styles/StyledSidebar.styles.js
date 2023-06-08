@@ -99,59 +99,67 @@ const StyledSidebar = styled.div`
 
     > ul {
       > li {
-        padding: 1rem 0rem;
-        box-shadow: 0px 2px 2px -2px rgba(255, 255, 255, 0.3);
-        color: var(--body-text);
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        grid-gap: 1rem;
-        transition: all 0.25s ease-in-out;
-        &:hover {
-          background: linear-gradient(
-            to right,
-            rgba(155, 155, 155, 0.2),
-            rgba(155, 155, 155, 0.1)
-          );
-        }
-        > .profile-image {
-          margin-left: 1.5rem;
-          width: 50px;
-          aspect-ratio: 1 / 1;
-          border-radius: 50%;
-          padding: 0.4rem;
-          background: var(--icon-bg);
-          overflow: hidden;
-          > img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        > a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          text-decoration: none;
+          padding: 1rem 0rem;
+          box-shadow: 0px 2px 2px -2px rgba(255, 255, 255, 0.3);
+          color: var(--body-text);
+          display: grid;
+          grid-template-columns: auto 1fr auto;
+          grid-gap: 1rem;
+          transition: all 0.25s ease-in-out;
+          cursor: pointer;
+          &:hover {
+            background: linear-gradient(
+              to right,
+              rgba(155, 155, 155, 0.2),
+              rgba(155, 155, 155, 0.1)
+            );
           }
-        }
 
-        > .content {
-          small {
-            width: 15rem;
-            margin-top: 0.5rem;
-            display: block;
-            white-space: nowrap;
+          > .profile-image {
+            margin-left: 1.5rem;
+            width: 50px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            padding: 0.4rem;
+            background: var(--icon-bg);
             overflow: hidden;
-            text-overflow: ellipsis;
+            > img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
           }
-        }
 
-        > .status {
-          margin-right: 1.5rem;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: space-evenly;
-          > span {
-            &:nth-child(2).active {
+          > .content {
+            small {
+              width: 15rem;
+              margin-top: 0.5rem;
               display: block;
-              width: 8px;
-              height: 8px;
-              border-radius: 50%;
-              background: hsl(110, 50%, 40%);
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+
+          > .status {
+            margin-right: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            > span {
+              &:nth-child(2).active {
+                display: block;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: hsl(110, 50%, 40%);
+              }
             }
           }
         }
