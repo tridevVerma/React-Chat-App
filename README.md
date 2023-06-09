@@ -2,6 +2,15 @@
 
 ### [Demo Link](https://react-chat-app-23.netlify.app/)
 
+## Screenshots
+
+![1-min](https://github.com/tridevVerma/React-Chat-App/assets/47333699/a202cf64-dd47-4223-bb97-6746e6cf51c0)
+![2-min](https://github.com/tridevVerma/React-Chat-App/assets/47333699/2dde79d4-b38d-4237-b6bd-3151dac51417)
+![3-min](https://github.com/tridevVerma/React-Chat-App/assets/47333699/85998796-1469-4ec8-9d8f-ecc25b4793ad)
+![4-min](https://github.com/tridevVerma/React-Chat-App/assets/47333699/38dbfa88-7cc6-4ea5-a16d-436125f1b76f)
+![5-min](https://github.com/tridevVerma/React-Chat-App/assets/47333699/0ebb89f3-8e27-4da6-9154-79282b006310)
+![6-min](https://github.com/tridevVerma/React-Chat-App/assets/47333699/53564e36-2b53-412e-a306-7cbac512c029)
+
 ## Getting Started
 
 - Clone this project
