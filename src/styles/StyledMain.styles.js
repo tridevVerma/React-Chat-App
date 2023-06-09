@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 const StyledMain = styled.div`
+  min-height: 90vh;
+  max-height: 90vh;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto minmax(0, 1fr) auto;
   > .heading {
     > ul {
       display: grid;
@@ -50,6 +52,121 @@ const StyledMain = styled.div`
             color: hsl(199, 80%, 50%);
             font-size: 1.3rem;
           }
+        }
+      }
+    }
+  }
+
+  > .conversation-container {
+    position: relative;
+    padding: 1.5rem;
+    max-height: 100%;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background: hsla(199, 80%, 50%, 0.8);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    > .floating-msg {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      > p {
+        display: inline-block;
+        color: hsl(0, 0%, 40%);
+        padding: 0.5rem 1.5rem;
+        border-radius: 1rem;
+        box-shadow: inset 2px 4px 10px -4px rgba(0, 0, 0, 0.8),
+          inset -2px -2px 10px -4px rgba(210, 210, 210, 0.2);
+      }
+    }
+
+    > .msg-box {
+      text-align: left;
+      margin-bottom: 1.5rem;
+      > p {
+        max-width: 70%;
+        display: inline-block;
+        padding: 0.6rem;
+        background: linear-gradient(
+          to right,
+          hsl(199, 8%, 15%),
+          hsl(199, 8%, 18%)
+        );
+        box-shadow: 4px 6px 12px -2px rgba(0, 0, 0, 0.2),
+          -2px -4px 10px -2px rgba(0, 0, 0, 0.2);
+        color: var(--body-text);
+        border-radius: 0.3rem;
+        > span {
+          display: block;
+          font-size: 0.8rem;
+          text-align: right;
+          margin-top: 0.6rem;
+          > i {
+            font-size: 0.7rem;
+            margin-right: 0.3rem;
+          }
+        }
+      }
+
+      > .sender-info {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-top: 0.6rem;
+        > small {
+          order: 2;
+          color: hsl(0, 0%, 60%);
+        }
+        > .profile-img {
+          order: 1;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          padding: 0.4rem;
+          background: var(--icon-bg);
+          box-shadow: var(--icon-shadow);
+          > img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+
+    > .me {
+      text-align: right;
+      > p {
+        background: linear-gradient(
+          to right,
+          hsl(199, 80%, 50%),
+          hsl(199, 80%, 46%)
+        );
+        color: var(--body-text);
+      }
+
+      > .sender-info {
+        justify-content: flex-end;
+        > small {
+          order: 1;
+        }
+        > .profile-img {
+          order: 2;
         }
       }
     }

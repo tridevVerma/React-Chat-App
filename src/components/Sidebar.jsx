@@ -1,41 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { StyledSidebar } from "../styles";
-import axios from "axios";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-const Sidebar = () => {
-  const [recentContacts, setRecentContacts] = useState([]);
+/**
+ *
+ * @param {Array} recentContacts List of recent chats of logged user
+ * @param {Function} showModal show modal
+ * @returns {JSX}
+ */
+const Sidebar = ({ recentContacts, showModal }) => {
+  // navigator hook --> to manipulate history or change url
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    async function getRecentContacts() {
-      try {
-        const response = await axios.get(
-          "https://my-json-server.typicode.com/tridevVerma/React-Chat-App/users"
-        );
-        setRecentContacts(response.data);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-
-    getRecentContacts();
-  }, []);
+  // Get current logged user data from redux store
+  const loggedUser = useSelector((state) => state.loggedUser.value);
 
   return (
     <StyledSidebar>
       <div className="user-info">
         <div className="profile-image">
-          <img src="https://robohash.org/namquaerataut.png" alt="profile-pic" />
+          <img src={loggedUser.image} alt="profile-pic" />
         </div>
         <ul>
           <li>
-            <i className="fa-solid fa-users"></i>
+            <button onClick={() => navigate(-1)}>
+              <i className="fa-solid fa-arrow-left"></i>
+            </button>
           </li>
           <li>
-            <i className="fa-solid fa-house"></i>
+            <button onClick={showModal}>
+              <i className="fas fa-plus"></i>
+            </button>
           </li>
           <li>
-            <i className="fa-sharp fa-solid fa-right-from-bracket"></i>
+            <button>
+              <i className="fa-solid fa-users"></i>
+            </button>
           </li>
         </ul>
       </div>
@@ -60,11 +61,21 @@ const Sidebar = () => {
                     <h4>
                       {contact.firstname} {contact.lastname}
                     </h4>
-                    <small>Hey!! whats going on ?</small>
+                    <small>
+                      {
+                        contact.conversation[contact.conversation.length - 1]
+                          .content
+                      }
+                    </small>
                   </div>
 
                   <div className="status">
-                    <small>10:12</small>
+                    <small>
+                      {
+                        contact.conversation[contact.conversation.length - 1]
+                          .time
+                      }
+                    </small>
                     <span className={contact.active ? "active" : ""}></span>
                   </div>
                 </NavLink>

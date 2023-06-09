@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 const StyledSidebar = styled.div`
   width: 100%;
-  height: 100%;
   background: var(--sidebar-bg);
+  min-height: 90vh;
+  max-height: 90vh;
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto auto minmax(0, 1fr);
 
   > .user-info {
     width: 100%;
@@ -36,16 +37,19 @@ const StyledSidebar = styled.div`
         gap: 1.5rem;
       }
       > li {
-        background: var(--icon-bg);
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
         display: grid;
         place-items: center;
-        box-shadow: var(--icon-shadow);
-        > i {
-          font-size: 1rem;
-          color: hsl(199, 80%, 50%);
+        > button {
+          background: var(--icon-bg);
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          box-shadow: var(--icon-shadow);
+          cursor: pointer;
+          > i {
+            font-size: 1rem;
+            color: hsl(199, 80%, 50%);
+          }
         }
       }
     }

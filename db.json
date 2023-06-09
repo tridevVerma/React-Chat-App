@@ -14,32 +14,32 @@
         {
           "user": 0,
           "content": "Hi Terry",
-          "time": "8:52"
+          "time": "8:52 am"
         },
         {
           "user": 1,
           "content": "Tridev, Good to meet you!",
-          "time": "8:54"
+          "time": "8:54 am"
         },
         {
           "user": 0,
           "content": "Did you just arrive here?",
-          "time": "8:55"
+          "time": "8:55 am"
         },
         {
           "user": 1,
           "content": "Yeah, We arrived last week.",
-          "time": "8:56"
+          "time": "8:56 am"
         },
         {
           "user": 0,
           "content": "It's exciting! It's much busier than the last city we lived in. I was working in Seattle for the last 3 years.",
-          "time": "8:57"
+          "time": "8:57 am"
         },
         {
           "user": 1,
           "content": "It really is very busy. I moved here from Tokyo 5 years ago and I still have trouble sometimes.",
-          "time": "8:58"
+          "time": "8:58 am"
         }
       ]
     },
@@ -68,22 +68,22 @@
         {
           "user": 1,
           "content": "Hii Saurav, it's Terrill. How are you?",
-          "time": "7:26"
+          "time": "7:26 pm"
         },
         {
           "user": 0,
           "content": "Oh, hi, John! I was just thinking about you.",
-          "time": "7:26"
+          "time": "7:26 pm"
         },
         {
           "user": 1,
           "content": "That's nice. I was wondering if you'd like to go to a movie tonight.",
-          "time": "7:28"
+          "time": "7:28 pm"
         },
         {
           "user": 0,
           "content": "Sure, I'd love to! What's playing?",
-          "time": "7:29"
+          "time": "7:29 pm"
         }
       ]
     },

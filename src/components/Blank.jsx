@@ -1,6 +1,8 @@
 import React from "react";
 import { StyledBlank } from "../styles";
+
 const Blank = () => {
+  // Render routes other than conversation routes
   return (
     <StyledBlank>
       <div className="img-container">
