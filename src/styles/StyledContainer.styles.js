@@ -8,6 +8,7 @@ const StyledContainer = styled.div`
   display: grid;
   grid-template-columns: 100%;
   background: linear-gradient(to right bottom, #3d4049, #171b22);
+  overflow: hidden;
   @media screen and (min-width: 725px) {
     grid-template-columns: 35% 65%;
   }

@@ -12,9 +12,9 @@ const StyledSidebar = styled.div`
     width: 100%;
     padding: 1.5rem;
     padding-bottom: 0.8rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    justify-content: space-between;
     > .profile-image {
       width: 40px;
       height: 40px;
@@ -27,6 +27,12 @@ const StyledSidebar = styled.div`
         height: 100%;
         object-fit: cover;
       }
+    }
+
+    > p {
+      margin-left: 1rem;
+      color: var(--body-text);
+      text-transform: capitalize;
     }
     > ul {
       display: flex;
@@ -45,10 +51,13 @@ const StyledSidebar = styled.div`
           height: 40px;
           border-radius: 50%;
           box-shadow: var(--icon-shadow);
+          &:active {
+            box-shadow: var(--icon-active-shadow);
+          }
           cursor: pointer;
           > i {
             font-size: 1rem;
-            color: hsl(199, 80%, 50%);
+            color: var(--primary);
           }
         }
       }
@@ -59,23 +68,22 @@ const StyledSidebar = styled.div`
     width: 100%;
     padding: 0rem 1.5rem;
     margin: 1rem auto;
-    > form {
-      position: relative;
-      > i {
-        position: absolute;
-        top: 10px;
-        right: 16px;
-        color: grey;
-      }
-      > input {
-        width: 100%;
-        background: var(--input-bg);
-        color: var(--body-text);
-        padding: 0.8rem 1rem;
+    position: relative;
 
-        border-radius: 2rem;
-        box-shadow: var(--input-shadow);
-      }
+    > i {
+      position: absolute;
+      top: 0.8rem;
+      right: 2.5rem;
+      color: grey;
+    }
+    > input {
+      width: 100%;
+      background: var(--input-bg);
+      color: var(--body-text);
+      padding: 0.8rem 1rem;
+
+      border-radius: 2rem;
+      box-shadow: var(--input-shadow);
     }
   }
 
@@ -96,12 +104,19 @@ const StyledSidebar = styled.div`
 
     &::-webkit-scrollbar-thumb {
       border-radius: 5px;
-      background: hsla(199, 80%, 50%, 0.8);
+      background: var(--primary-bg);
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
     }
 
     > ul {
+      > .contact-selected {
+        background: linear-gradient(
+          to right,
+          rgba(155, 155, 155, 0.2),
+          rgba(155, 155, 155, 0.1)
+        );
+      }
       > li {
         > a {
           display: block;
@@ -156,13 +171,17 @@ const StyledSidebar = styled.div`
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
+            > small {
+              text-transform: uppercase;
+              font-size: 0.8rem;
+            }
             > span {
               &:nth-child(2).active {
                 display: block;
                 width: 8px;
                 height: 8px;
                 border-radius: 50%;
-                background: hsl(110, 50%, 40%);
+                background: var(--active-clr);
               }
             }
           }

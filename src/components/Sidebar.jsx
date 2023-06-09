@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { StyledSidebar } from "../styles";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -9,12 +9,41 @@ import { useSelector } from "react-redux";
  * @param {Function} showModal show modal
  * @returns {JSX}
  */
-const Sidebar = ({ recentContacts, showModal }) => {
+const Sidebar = ({ recentContacts, showModal, showThemeModal }) => {
   // navigator hook --> to manipulate history or change url
   const navigate = useNavigate();
 
   // Get current logged user data from redux store
   const loggedUser = useSelector((state) => state.loggedUser.value);
+
+  // state to manage filtering of recent chats by name of the freind
+  const [searchContact, setSearchContact] = useState("");
+
+  // state to managge current filtered list of recent chats
+  const [filteredList, setFilteredList] = useState(recentContacts);
+
+  function handleContactSelect(e) {
+    document.querySelectorAll(".recent-chats > ul > li").forEach((contact) => {
+      contact.classList.remove("contact-selected");
+    });
+    e.currentTarget.classList.add("contact-selected");
+  }
+
+  useEffect(() => {
+    if (searchContact.length > 0) {
+      // if search box has atleast one character --> filter recentContact by freind name
+      setFilteredList(
+        recentContacts.filter((contact) => {
+          return contact.firstname
+            .toLowerCase()
+            .includes(searchContact.toLowerCase());
+        })
+      );
+    } else {
+      // else show all recent chats
+      setFilteredList(recentContacts);
+    }
+  }, [searchContact, recentContacts]);
 
   return (
     <StyledSidebar>
@@ -22,6 +51,9 @@ const Sidebar = ({ recentContacts, showModal }) => {
         <div className="profile-image">
           <img src={loggedUser.image} alt="profile-pic" />
         </div>
+        <p>
+          {loggedUser.firstname} {loggedUser.lastname}
+        </p>
         <ul>
           <li>
             <button onClick={() => navigate(-1)}>
@@ -34,25 +66,28 @@ const Sidebar = ({ recentContacts, showModal }) => {
             </button>
           </li>
           <li>
-            <button>
-              <i className="fa-solid fa-users"></i>
+            <button onClick={showThemeModal}>
+              <i className="fa-solid fa-palette"></i>
             </button>
           </li>
         </ul>
       </div>
 
       <div className="search-box">
-        <form action="" method="get" spellCheck="false">
-          <i className="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search or start new chat..." />
-        </form>
+        <i className="fa-solid fa-magnifying-glass"></i>
+        <input
+          type="text"
+          placeholder="Search or start new chat..."
+          value={searchContact}
+          onChange={(e) => setSearchContact(e.target.value)}
+        />
       </div>
 
       <div className="recent-chats">
         <ul>
-          {recentContacts.map((contact) => {
+          {filteredList.map((contact) => {
             return (
-              <li key={contact.id}>
+              <li key={contact.id} onClick={handleContactSelect}>
                 <NavLink to={`/conversation/${contact.id}`}>
                   <div className="profile-image">
                     <img src={contact.image} alt={contact.firstname} />

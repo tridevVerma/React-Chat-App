@@ -7,11 +7,18 @@ const initialState = {
   error: "",
 };
 
-export const fetchContacts = createAsyncThunk("contacts/fetchContacts", () => {
-  return axios
-    .get("https://my-json-server.typicode.com/tridevVerma/React-Chat-App/users")
-    .then((response) => response.data);
-});
+export const fetchContacts = createAsyncThunk(
+  "contacts/fetchContacts",
+  async (previousList) => {
+    if (previousList) {
+      return previousList;
+    }
+    const response = await axios.get(
+      "https://my-json-server.typicode.com/tridevVerma/React-Chat-App/users"
+    );
+    return response.data;
+  }
+);
 
 const contactSlice = createSlice({
   name: "contacts",
@@ -27,7 +34,13 @@ const contactSlice = createSlice({
           state.users[index].conversation = [];
         }
         state.users[index].conversation.push(message);
+        localStorage.setItem("allContacts", JSON.stringify(state.users));
       }
+    },
+    deleteConversation: (state, action) => {
+      const index = state.users.findIndex((user) => user.id === action.payload);
+      state.users[index].conversation = [];
+      localStorage.setItem("allContacts", JSON.stringify(state.users));
     },
   },
   extraReducers: (builder) => {
@@ -37,15 +50,16 @@ const contactSlice = createSlice({
     builder.addCase(fetchContacts.fulfilled, (state, action) => {
       state.loading = false;
       state.users = action.payload;
+      localStorage.setItem("allContacts", JSON.stringify(action.payload));
       state.error = "";
     });
     builder.addCase(fetchContacts.rejected, (state, action) => {
-      state.loading = true;
+      state.loading = false;
       state.users = [];
       state.error = action.error.message;
     });
   },
 });
 
-export const { addMessage } = contactSlice.actions;
+export const { addMessage, deleteConversation } = contactSlice.actions;
 export default contactSlice.reducer;

@@ -35,22 +35,20 @@ const StyledMain = styled.div`
         }
 
         > button {
-          width: 50px;
-          height: 50px;
+          width: 40px;
+          height: 40px;
           border-radius: 50%;
           padding: 0.4rem;
           background: var(--icon-bg);
-          box-shadow: 5px 10px 25px -3px rgba(0, 0, 0, 0.6),
-            -2px -2px 15px -3px rgba(255, 255, 255, 0.3);
+          box-shadow: var(--icon-shadow);
           cursor: pointer;
 
           &:active {
-            box-shadow: 5px 6px 12px -3px rgba(0, 0, 0, 0.6),
-              -2px -2px 10px -3px rgba(255, 255, 255, 0.2);
+            box-shadow: var(--icon-active-shadow);
           }
           > i {
-            color: hsl(199, 80%, 50%);
-            font-size: 1.3rem;
+            color: var(--primary);
+            font-size: 1.1rem;
           }
         }
       }
@@ -62,7 +60,6 @@ const StyledMain = styled.div`
     padding: 1.5rem;
     max-height: 100%;
     overflow-y: scroll;
-
     &::-webkit-scrollbar-track {
       background-color: transparent;
       border-radius: 10px;
@@ -75,7 +72,7 @@ const StyledMain = styled.div`
 
     &::-webkit-scrollbar-thumb {
       border-radius: 5px;
-      background: hsla(199, 80%, 50%, 0.8);
+      background: var(--primary-bg);
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
     }
@@ -101,17 +98,17 @@ const StyledMain = styled.div`
       > p {
         max-width: 70%;
         display: inline-block;
-        padding: 0.6rem;
+        padding: 0.6rem 1rem;
         background: linear-gradient(
           to right,
           hsl(199, 8%, 15%),
           hsl(199, 8%, 18%)
         );
-        box-shadow: 4px 6px 12px -2px rgba(0, 0, 0, 0.2),
-          -2px -4px 10px -2px rgba(0, 0, 0, 0.2);
+        box-shadow: var(--icon-shadow);
         color: var(--body-text);
         border-radius: 0.3rem;
         > span {
+          text-transform: uppercase;
           display: block;
           font-size: 0.8rem;
           text-align: right;
@@ -154,8 +151,8 @@ const StyledMain = styled.div`
       > p {
         background: linear-gradient(
           to right,
-          hsl(199, 80%, 50%),
-          hsl(199, 80%, 46%)
+          var(--primary),
+          var(--primary-light)
         );
         color: var(--body-text);
       }
@@ -182,7 +179,7 @@ const StyledMain = styled.div`
     > button {
       background: transparent;
       > i {
-        color: hsl(199, 80%, 50%);
+        color: var(--primary);
         font-size: 1.2rem;
       }
     }
@@ -219,7 +216,7 @@ const StyledMain = styled.div`
         right: 1.3rem;
 
         > i {
-          color: hsl(199, 80%, 50%);
+          color: var(--primary);
           font-size: 1.1rem;
         }
       }
