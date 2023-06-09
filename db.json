@@ -96,7 +96,7 @@
       "gender": "male",
       "city": "Manchester",
       "about": "Paralegal",
-      "active": false,
+      "active": true,
       "conversation": [
         {
           "user": 4,
