@@ -1,3 +1,70 @@
+### React-Chat project build using React, Styled-Components, React-Toastify and Redux-toolkit
+
+### [Demo Link](https://react-chat-app-23.netlify.app/)
+
+## Getting Started
+
+- Clone this project
+- Start by installing npm if you don't have them already.
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/tridevVerma/React-Chat-App.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+
+## Folder Structure
+
+```
+react-todolist/
+├── node_modules/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   ├── manifest.json
+│   ├── logo192.png
+│   ├── logo512.png
+|
+├── src/
+│   ├── components/
+│   │   ├── index.js
+│   │   ├── Blank.jsx
+│   │   ├── Container.jsx
+│   │   ├── Main.jsx
+│   │   ├── ProfileViewModal.jsx
+│   │   ├── Sidebar.jsx
+│   │   ├── ThemeModal.jsx
+│   │   └── ...
+│   ├── redux/
+│   │   ├── contactSlice.js
+│   │   ├── loggedUser.js
+│   │   ├── store.js
+│   │   └── ...
+│   ├── styles/
+│   │   ├── index.js
+│   │   ├── StyledBlank.styles.js
+│   │   ├── StyledContainer.styles.js
+│   │   ├── StyledMain.styles.js
+│   │   ├── StyledModal.styles.js
+│   │   ├── StyledProfileViewModal.styles.js
+│   │   ├── StyledSidebar.styles.js
+│   │   ├── StyledThemeModal.styles.js
+│   │   └── ...
+│   ├── App.js
+│   ├── index.js
+│   └── index.css
+├── .gitignore
+├── db.json
+├── package-lock.json
+├── package.json
+├── README.md
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

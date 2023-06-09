@@ -96,7 +96,34 @@
       "gender": "male",
       "city": "Manchester",
       "about": "Paralegal",
-      "active": false
+      "active": false,
+      "conversation": [
+        {
+          "user": 4,
+          "content": "Hi, Saurav. What seems to be the problem today?",
+          "time": "5:05 pm"
+        },
+        {
+          "user": 0,
+          "content": "I hope you can tell me! A chunk of my tooth broke off yesterday.",
+          "time": "5:26 pm"
+        },
+        {
+          "user": 4,
+          "content": " That's not good. Did you bite something hard?",
+          "time": "5:28 pm"
+        },
+        {
+          "user": 0,
+          "content": "No, I didn't . . . that's the weird thing. It just kind of fell out.",
+          "time": "5:29 pm"
+        },
+        {
+          "user": 4,
+          "content": "Did it hurt when it broke?",
+          "time": "5:30 pm"
+        }
+      ]
     },
     {
       "id": 5,
@@ -118,7 +145,34 @@
       "gender": "female",
       "city": "Essex",
       "about": "Civil Engineer",
-      "active": false
+      "active": false,
+      "conversation": [
+        {
+          "user": 0,
+          "content": "Hey, Alison! It's good to see you.",
+          "time": "7:26 pm"
+        },
+        {
+          "user": 6,
+          "content": "You, too. I haven't seen you in a few days. How are you? How's it going?",
+          "time": "7:28 pm"
+        },
+        {
+          "user": 0,
+          "content": " Not bad. I'm so busy with the classes I'm taking. How about you?",
+          "time": "7:29 pm"
+        },
+        {
+          "user": 6,
+          "content": " I'm okay. I know you're busy with classes. My job's really hectic this time of year, too. What's new with you?",
+          "time": "7:30 pm"
+        },
+        {
+          "user": 0,
+          "content": "Nothing much. I'm on my way to the mall. I need some time off! Do you remember Lana? She's there. Ha! She's always at the mall! I think a lot of our friends plan to just hang out at the mall tonight.",
+          "time": "7:35 pm"
+        }
+      ]
     },
     {
       "id": 7,
