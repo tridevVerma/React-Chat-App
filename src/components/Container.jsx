@@ -29,30 +29,33 @@ const Container = ({ notify }) => {
   }
 
   function showThemeModal() {
-    // Open Modal
+    // Open Theme Modal
     setOpenThemeModal(true);
   }
 
   function hideThemeModal() {
-    // Hide Modal
+    // Hide Theme Modal
     setOpenThemeModal(false);
   }
 
+  // close both modals if clicked outside
   function hideModals() {
     hideModal();
     hideThemeModal();
   }
 
   useEffect(() => {
-    // Fetch users on page load
+    // Check if users exist in localstorage if yes --> get those users
     if (localStorage.getItem("allContacts")) {
       dispatch(fetchContacts(JSON.parse(localStorage.getItem("allContacts"))));
     } else {
+      // Fetch users on page load
       dispatch(fetchContacts());
     }
   }, [dispatch]);
 
   if (allContacts.error) {
+    // If error in network request --> show error
     notify("error", allContacts.error);
   }
 

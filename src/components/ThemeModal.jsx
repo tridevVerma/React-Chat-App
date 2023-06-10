@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { StyledThemeModal, StyledLI } from "../styles";
 
 const ThemeModal = ({ open, hideThemeModal, notify }) => {
+  // Theme colors
   const themeColors = [
     { hue: 199, hex: "#26a0d9" },
     { hue: 345, hex: "#d92653" },
@@ -11,6 +12,7 @@ const ThemeModal = ({ open, hideThemeModal, notify }) => {
   ];
 
   useEffect(() => {
+    // Gets primary theme color from localstorage (only if exists)
     if (localStorage.getItem("theme-hue")) {
       document
         .querySelector(":root")
@@ -22,6 +24,7 @@ const ThemeModal = ({ open, hideThemeModal, notify }) => {
   }, []);
 
   function handleThemeChange(hue) {
+    // Change primary theme of Application and saves it in local-storage
     document.querySelector(":root").style.setProperty("--primary-hue", hue);
     localStorage.setItem("theme-hue", JSON.stringify(hue));
     hideThemeModal();

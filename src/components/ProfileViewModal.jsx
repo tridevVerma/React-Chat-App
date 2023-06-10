@@ -7,6 +7,7 @@ const ProfileViewModal = ({ user, open, closeModal, notify }) => {
   const dispatch = useDispatch();
 
   function handleDeleteConversation(id) {
+    // clears conversation
     dispatch(deleteConversation(id));
     notify("success", "Clear Chat !!");
     closeModal();

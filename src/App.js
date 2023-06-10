@@ -10,6 +10,7 @@ const notify = (type, message) => toast(message, { type });
 function App() {
   return (
     <BrowserRouter>
+      {/* Providing store(redux data) to whole container  */}
       <Provider store={store}>
         <Container notify={notify} />
       </Provider>

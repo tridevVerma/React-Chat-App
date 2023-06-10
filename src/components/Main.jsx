@@ -35,6 +35,7 @@ const Main = ({ notify }) => {
   const [showProfile, setShowProfile] = useState(false);
 
   useEffect(() => {
+    // If new message added --> scroll down to show message
     const allMsg = document.querySelectorAll(".msg-box");
     const lastMsg = allMsg[allMsg.length - 1];
     if (lastMsg) {
@@ -87,10 +88,12 @@ const Main = ({ notify }) => {
     setTextMsg("");
   }
 
+  // Function to open user's profile modal
   function openProfileModal() {
     setShowProfile(true);
   }
 
+  // Function to close user's profile modal
   function closeProfileModal() {
     setShowProfile(false);
   }
